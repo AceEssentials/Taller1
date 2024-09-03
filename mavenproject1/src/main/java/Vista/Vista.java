@@ -10,3 +10,4 @@ package Vista;
  */
 public class Vista {
     private controlPersona
+}

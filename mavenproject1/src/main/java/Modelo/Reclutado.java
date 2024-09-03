@@ -9,11 +9,11 @@ package Modelo;
  * @author JULIAN
  */
 public class Reclutado extends Persona{
-    private String codigoDeReclutamiento;
+    private String codigoReclutamiento;
 
     public Reclutado(String codigoDeReclutamiento, String nombre, int cedula, String apellido) {
         super(nombre, cedula, apellido);
-        this.codigoDeReclutamiento = codigoDeReclutamiento;
+        this.codigoReclutamiento = codigoDeReclutamiento;
     }
     
 }

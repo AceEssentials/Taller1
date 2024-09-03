@@ -4,10 +4,14 @@
  */
 package Controlador;
 
+import Modelo.Persona;
+
 /**
  *
  * @author JULIAN
  */
-public class Controlador {
-    
+public class ControlPersona {
+    private Persona persona;
+    private vista ventana
+  
 }

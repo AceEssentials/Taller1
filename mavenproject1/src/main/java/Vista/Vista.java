@@ -9,5 +9,4 @@ package Vista;
  * @author JULIAN
  */
 public class Vista {
-    
-}
+    private controlPersona

@@ -8,6 +8,10 @@ package Modelo;
  *
  * @author JULIAN
  */
-public class Modelo {
+public class Remiso extends Persona{
+
+    public Remiso(String nombre, int cedula, String apellido) {
+        super(nombre, cedula, apellido);
+    }
     
 }

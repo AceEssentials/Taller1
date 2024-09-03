@@ -12,6 +12,6 @@ import Modelo.Persona;
  */
 public class ControlPersona {
     private Persona persona;
-    private vista ventana
+    private Vista ventana;
   
 }

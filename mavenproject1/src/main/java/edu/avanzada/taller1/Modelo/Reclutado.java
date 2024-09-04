@@ -13,4 +13,13 @@ public class Reclutado extends Persona {
     }
 
     // Métodos específicos de Reclutado...
+
+    public String getCodigoReclutamiento() {
+        return codigoReclutamiento;
+    }
+
+    public void setCodigoReclutamiento(String codigoReclutamiento) {
+        this.codigoReclutamiento = codigoReclutamiento;
+    }
+    
 }

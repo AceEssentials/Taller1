@@ -1,19 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.avanzada.taller1.Controlador;
-
-/**
- *
- * @author JULIAN
- */
-
 
 import edu.avanzada.taller1.Modelo.Persona;
 import edu.avanzada.taller1.Modelo.Reservista;
 import edu.avanzada.taller1.Vista.VistaPrincipal;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,33 +10,30 @@ public class ControlVistaModelo {
     private VistaPrincipal vista;
     private GestorSituacionMilitar gestor;
 
-    public ControlVistaModelo (VistaPrincipal vista, GestorSituacionMilitar gestor) {
+    public ControlVistaModelo(VistaPrincipal vista, GestorSituacionMilitar gestor) {
         this.vista = vista;
         this.gestor = gestor;
-
-        this.vista.setInsertarListener(new InsertarListener());
-        this.vista.setConsultarListener(new ConsultarListener());
-        this.vista.setCambiarListener(new CambiarListener());
+        this.vista.setInsertarButtonListener(new InsertarListener());
+        this.vista.setConsultarButtonListener(new ConsultarListener());
+        this.vista.setCambiarButtonListener(new CambiarListener());
     }
 
     class InsertarListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String cedula = vista.getCedula();
-                String nombre = vista.getNombre();
-                String apellido = vista.getApellido();
+                String cedula = vista.getCedulaText();
+                String nombre = vista.getNombreText();
+                String apellido = vista.getApellidoText();
                 String situacion = vista.getSituacionSeleccionada();
-                
-                Persona persona;
 
+                Persona persona;
                 if (situacion.equals("Reservista")) {
-                    String libretaMilitar = vista.getLibretaMilitar();
+                    String libretaMilitar = vista.getLibretaMilitarText();
                     persona = new Reservista(libretaMilitar, nombre, cedula, apellido);
                 } else {
                     persona = new Persona(cedula, nombre, apellido, situacion);
                 }
-
                 gestor.insertarPersona(persona);
                 vista.mostrarMensaje("Persona insertada con éxito.");
             } catch (Exception ex) {
@@ -60,9 +46,8 @@ public class ControlVistaModelo {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String cedula = vista.getCedula();
+                String cedula = vista.getCedulaText();
                 Persona persona = gestor.consultarPersona(cedula);
-
                 if (persona != null) {
                     vista.mostrarMensaje("Persona encontrada: " + persona.getNombre() + " " + persona.getApellido());
                 } else {
@@ -78,10 +63,9 @@ public class ControlVistaModelo {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String cedula = vista.getCedula();
+                String cedula = vista.getCedulaText();
                 String nuevaSituacion = vista.getSituacionSeleccionada();
-                String detalle = vista.getLibretaMilitar(); // o algún otro detalle relevante
-
+                String detalle = vista.getLibretaMilitarText();
                 gestor.cambiarSituacion(cedula, nuevaSituacion, detalle);
                 vista.mostrarMensaje("Situación militar cambiada con éxito.");
             } catch (Exception ex) {

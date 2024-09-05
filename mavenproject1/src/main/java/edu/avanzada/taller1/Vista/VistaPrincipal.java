@@ -1,4 +1,27 @@
 package edu.avanzada.taller1.Vista;
+
+/**​
+
+ * @author Julian Lopez
+
+ * @version 1.1
+
+ * 2/09/2024​
+
+ El propósito de esta clase VistaPrincipal es crear una interfaz gráfica de 
+ * usuario (GUI) 
+ La clase define una ventana con campos para ingresar información personal 
+ * (cédula, nombre, apellido, libreta militar), un selector de situación
+ * militar, y botones para insertar, consultar y cambiar datos. 
+ * Proporciona métodos para acceder a los datos ingresados y para configurar 
+ * listeners de eventos en los botones.
+ *​
+
+ */
+
+
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -14,14 +37,18 @@ public class VistaPrincipal extends JFrame {
         setSize(550, 350); // Aumentamos el tamaño de la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
-        getRootPane().setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        getRootPane().setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 
+                20));
 
         // Crear componentes
-        txtCedula = new JTextField(20); // Aumentamos el tamaño de los campos de texto
+        txtCedula = new JTextField(20); // Aumentamos el tamaño de los campos de
+        //texto
+        
         txtNombre = new JTextField(20);
         txtApellido = new JTextField(20);
         txtLibretaMilitar = new JTextField(20);
-        comboSituacion = new JComboBox<>(new String[]{"Reservista", "Remiso", "Aplazado", "Reclutado"});
+        comboSituacion = new JComboBox<>(new String[]{"Reservista", "Remiso", 
+            "Aplazado", "Reclutado"});
         btnInsertar = new JButton("Insertar");
         btnConsultar = new JButton("Consultar");
         btnCambiar = new JButton("Cambiar");

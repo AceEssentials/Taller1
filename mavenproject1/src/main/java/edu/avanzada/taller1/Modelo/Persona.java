@@ -4,12 +4,20 @@
  */
 package edu.avanzada.taller1.Modelo;
 
-/**
- *
- * @author JULIAN
+/**​
+
+ * @author Julian Lopez
+
+ * @version 1.1
+
+ * 2/09/2024​
+
+la clase Persona está diseñada para manejar 
+* los atributos base de la clase padre Persona.
+
+ *​
+
  */
-
-
 
 public class Persona {
     private String cedula;
@@ -18,7 +26,8 @@ public class Persona {
     private String situacionMilitar;
     private String detalle;
 
-    public Persona(String cedula, String nombre, String apellido, String situacionMilitar) {
+    public Persona(String cedula, String nombre, String apellido, 
+            String situacionMilitar) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -26,6 +35,11 @@ public class Persona {
     }
 
     // Getters y setters
+    
+    public String getSituacion() {
+    return situacionMilitar; 
+}
+
 
     public String getCedula() {
         return cedula;
